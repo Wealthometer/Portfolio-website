@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Developer - Portfolio</title>
+    <link rel="stylesheet" href="folio.css">
+</head>
+<body>
+    <div class="portfolio-container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <h1 id ="ghostText"></h1>
+                    <p>Full Stack Web Development & Designer Student</p>
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="profile-image">
+                        <img src="/Responsive Card Slider 1/images/avatar-1.png" alt="Profile">
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Passionate developer with expertise in modern web technologies. 
+                            I create responsive and innovative web solutions that deliver exceptional user experiences.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="projects" class="pro">
+                <h2>&nbsp;&nbsp;&nbsp;My Projects</h2>
+                <div class="project-grid" id="project-grid" style="border-radius: 15px;">
+                    <nav>
+                        <ul  style="margin-left: 40px;
+                                justify-content: center;" class="pro">
+                            <li><a href="/Clock/clock.html">Clock</a></li>
+                            <li><a href="/FullscreenImageSlider-master/FullscreenImageSlider-master/index.html">Image slider</a></li>
+                            <li><a href="/Contact Page/contact.html">Contact Page</a></li>
+                            <li><a href="/Animated-responsive-image-slider-master/Animated-responsive-image-slider-master/createImageSliderResponsive.html">Another Image slider</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <h2>Contact Me</h2>
+                <form>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/Wealthometer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wealth-hajoh-a5a61433a/">LinkedIn</a>
+                <a href="https://x.com/wealthometer_10">Twitter</a>
+            </div>
+            <p>&copy; 2024 Wealth Developer. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js">
+        // script.js
+document.addEventListener("DOMContentLoaded", function() {
+    const projects = [
+        { name: "E-Commerce Platform", tech: "React, Node.js" },
+        { name: "Social Media Dashboard", tech: "Vue.js, Firebase" },
+        { name: "Weather App", tech: "JavaScript, OpenWeather API" }
+    ];
+    
+    const projectGrid = document.getElementById("project-grid");
+    projects.forEach((project) => {
+        const projectCard = document.createElement("div");
+        projectCard.classList.add("project-card");
+        projectCard.innerHTML = `
+            <h3>${project.name}</h3>
+            <p>${project.tech}</p>
+        `;
+        projectGrid.appendChild(projectCard);
+    });
+});
+    </script>
+
+<script>
+    let text = "Wealth-Developer"; //💻👨‍💻
+    let h1 = document.getElementById('ghostText');
+
+    text.split('').forEach((char,index) => {
+        let span = document.createElement('span');
+        span.textContent = char === '  ' ? '\u00A0\u00A0' : char;
+        span.style.transitionDelay = `${(index % 16) * 0.1}s`;
+        h1.appendChild(span);
+    })
+</script>
+</body>
+</html>

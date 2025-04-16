@@ -1,0 +1,245 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    position: relative;
+    /* height: 100vh; */
+    /* background: #1c0101; */
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 5em;
+    text-transform: uppercase;
+    /* color: red; */
+    cursor: default;
+    display: flex;
+}
+
+h1 span {
+    transition: 1.5s;
+    text-shadow: 0 0 25px aliceblue;
+}
+
+h1:hover span {
+    filter: blur(15px);
+    opacity: 0;
+    transform: scale(2) translateY(-50%);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    transition: transform 0.5s ease;
+}
+
+.hero-content h1:hover {
+    transform: translateY(-10px);
+}
+
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.profile-image img:hover {
+    transform: rotate(360deg) scale(1.05);
+    animation: anime ease infinite;
+}
+
+.projects {
+    background-color: white;
+    padding: 50px 0;
+    border-radius: 20px;
+    display: flex;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card {
+    background-color: var(--background-color);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    max-height: 400px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.contact {
+    margin-bottom: 30px;
+    background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+}
+
+.contact input, 
+.contact textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-color);
+    color: white;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-top: 30px;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.pro {
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.pro:hover {
+    background: aliceblue;
+    /* color: white; */
+}
